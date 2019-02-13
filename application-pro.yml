@@ -1,0 +1,10 @@
+server:
+  port: 18888
+
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: account-service
+
+greeting: '운영서버 PRO'
