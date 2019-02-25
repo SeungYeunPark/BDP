@@ -1,0 +1,17 @@
+server:
+  port: 3106
+
+eureka:
+  instance:
+    hostname: 165.141.131.3
+#    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://165.141.131.10:${server.port}/eureka/
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    enableSelfPreservation: false
+
+    

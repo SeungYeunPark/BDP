@@ -1,0 +1,56 @@
+server:
+  port: 3206
+spring:
+  application:
+    name: ZuulServer1
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+#zuul.routes.'[유레카를 통해 얻어진 spring.application.name] = 경로'
+#zuul:
+#  ignored-services: '*'
+#  ignored-patterns: /**/api/**
+
+zuul:
+  routes:
+    your_app_name:
+      path: /SVC_IEye3_Crawler/**
+      url: http://165.141.131.9:8728/
+
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://165.141.131.3:3306/eureka/, http://165.141.131.10:3306/eureka/
+#      defaultZone: http://localhost:3306/eureka/, http://localhost:13306/eureka/
+
+############################################################
+################### Route Configuration ####################
+# Increase the Hystrix timeout to 6.5s (globally)
+# Ribbon global settings
+ribbon:
+  retryable: true
+# Max number of retries on the same server (excluding the first try)
+  MaxAutoRetries: 0
+# Max number of next servers to retry (excluding the first server)
+  MaxAutoRetriesNextServer: 1
+# Whether all operations can be retried for this client
+  OkToRetryOnAllOperations: true
+# Connect timeout used by Apache HttpClient
+  ConnectTimeout: 30000
+# Read timeout used by Apache HttpClient
+  ReadTimeout: 30000
