@@ -1,59 +1,53 @@
-server:
-  port: 3206
-spring:
-  application:
-    name: ZuulServer1
-
-endpoints:
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
-  health:
-    sensitive: false
-
-#zuul.routes.'[유레카를 통해 얻어진 spring.application.name] = 경로'
-#zuul:
-#  ignored-services: '*'
-#  ignored-patterns: /**/api/**
+#endpoints:
+#  restart:
+#    enabled: true
+#  shutdown:
+#    enabled: true
+#  health:
+#    sensitive: false
+#
+##zuul.routes.'[유레카를 통해 얻어진 spring.application.name] = 경로'
+##zuul:
+##  ignored-services: '*'
+##  ignored-patterns: /**/api/**
 
 zuul:
   routes:
     SVC_IEye3_Crawler:
       path: /SVC_IEye3_Crawler/**
-      url: http://165.141.131.9:18728/
+      url: http://165.141.131.9:8728/
     cafe:
       path: /cafe/**
       url: http://165.141.131.3:3502/
 
 
-management:
-  security:
-    enabled: false
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://165.141.131.3:3106/eureka/, http://165.141.131.10:3106/eureka/
-#      defaultZone: http://localhost:3106/eureka/, http://localhost:13106/eureka/
-
-############################################################
-################### Route Configuration ####################
-# Increase the Hystrix timeout to 6.5s (globally)
-# Ribbon global settings
-ribbon:
-  retryable: true
-# Max number of retries on the same server (excluding the first try)
-  MaxAutoRetries: 0
-# Max number of next servers to retry (excluding the first server)
-  MaxAutoRetriesNextServer: 1
-# Whether all operations can be retried for this client
-  OkToRetryOnAllOperations: true
-# Connect timeout used by Apache HttpClient
-  ConnectTimeout: 30000
-# Read timeout used by Apache HttpClient
-  ReadTimeout: 30000
+#management:
+#  security:
+#    enabled: false
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://165.141.131.3:3106/eureka/, http://165.141.131.10:3106/eureka/
+##      defaultZone: http://localhost:3106/eureka/, http://localhost:13106/eureka/
+#
+#############################################################
+#################### Route Configuration ####################
+## Increase the Hystrix timeout to 6.5s (globally)
+## Ribbon global settings
+#ribbon:
+#  retryable: true
+## Max number of retries on the same server (excluding the first try)
+#  MaxAutoRetries: 0
+## Max number of next servers to retry (excluding the first server)
+#  MaxAutoRetriesNextServer: 1
+## Whether all operations can be retried for this client
+#  OkToRetryOnAllOperations: true
+## Connect timeout used by Apache HttpClient
+#  ConnectTimeout: 30000
+## Read timeout used by Apache HttpClient
+#  ReadTimeout: 30000
