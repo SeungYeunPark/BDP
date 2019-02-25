@@ -21,7 +21,7 @@ zuul:
   routes:
     SVC_IEye3_Crawler:
       path: /SVC_IEye3_Crawler/**
-      url: http://165.141.131.9:8728/
+      url: http://165.141.131.9:18728/
     cafe:
       path: /cafe/**
       url: http://165.141.131.3:3502/
