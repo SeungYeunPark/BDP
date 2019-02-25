@@ -12,16 +12,19 @@ endpoints:
   health:
     sensitive: false
 
-#zuul.routes.'[ìœ ë ˆì¹´ë¥¼ í†µí•´ ì–»ì–´ì§„ spring.application.name] = ê²½ë¡œ'
+#zuul.routes.'[À¯·¹Ä«¸¦ ÅëÇØ ¾ò¾îÁø spring.application.name] = °æ·Î'
 #zuul:
 #  ignored-services: '*'
 #  ignored-patterns: /**/api/**
 
 zuul:
   routes:
-    your_app_name:
+    SVC_IEye3_Crawler:
       path: /SVC_IEye3_Crawler/**
-      url: http://165.141.131.9:18728/
+      url: http://165.141.131.9:8728/
+    cafe:
+      path: /cafe/**
+      url: http://165.141.131.3:3502/
 
 
 management:
