@@ -35,8 +35,8 @@ management:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://165.141.131.3:3306/eureka/, http://165.141.131.10:3306/eureka/
-#      defaultZone: http://localhost:3306/eureka/, http://localhost:13306/eureka/
+      defaultZone: http://165.141.131.3:3106/eureka/, http://165.141.131.10:3106/eureka/
+#      defaultZone: http://localhost:3106/eureka/, http://localhost:13106/eureka/
 
 ############################################################
 ################### Route Configuration ####################
