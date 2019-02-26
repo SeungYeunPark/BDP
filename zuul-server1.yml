@@ -10,11 +10,9 @@ zuul:
       path: /cafe1/**
       url: http://165.141.131.3:3502/
       
-zuul:
-  host:
-    connect-timeout-millis: 60000
-    socket-timeout-millis: 60000
-    max-total-connections: 200
-    max-per-route-connections: 20
-    time-unit: MILLISECONDS
-    time-to-live: 10000
+ribbon:
+  eureka:
+    enable: true
+  isSecure: false
+  readTimeout: 60000
+  connectTimeout: 60000
