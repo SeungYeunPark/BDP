@@ -6,7 +6,10 @@ zuul:
     cafe:
       path: /cafe/**
       url: http://165.141.131.3:3502/
-
+    cafe1:
+      path: /cafe1/**
+      url: http://165.141.131.3:3502/
+      
 zuul:
   host:
     connect-timeout-millis: 300000
