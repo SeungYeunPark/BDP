@@ -15,5 +15,5 @@ ribbon:
   eureka:
     enable: true
   isSecure: false
-  readTimeout: 60001
+  readTimeout: 60000
   connectTimeout: 60000
