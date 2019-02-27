@@ -10,9 +10,10 @@ zuul:
       path: /cafe1/**
       url: http://165.141.131.3:3502/
       
+
 ribbon:
   eureka:
     enable: true
   isSecure: false
-  readTimeout: 60000
+  readTimeout: 60001
   connectTimeout: 60000
