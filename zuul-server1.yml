@@ -10,7 +10,7 @@ zuul:
       path: /cafe1/**
       url: http://165.141.131.3:3502/
       
-
+ 
 ribbon:
   eureka:
     enable: true
