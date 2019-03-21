@@ -15,5 +15,8 @@ ribbon:
   eureka:
     enable: true
   isSecure: false
-  readTimeout: 60000
-  connectTimeout: 60000
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
+  
+  
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
