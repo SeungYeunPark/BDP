@@ -73,7 +73,7 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 60000
-            
+
 # unlimited size == -1
 spring:
   http:
