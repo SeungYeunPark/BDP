@@ -7,7 +7,7 @@ endpoints:
   health:
     sensitive: false
 
-#zuul.routes.'[유레카를 통해 얻어진 spring.application.name] = 경로'
+#zuul.routes.'[�쑀�젅移대�� �넻�빐 �뼸�뼱吏� spring.application.name] = 寃쎈줈'
 #zuul:
 #  ignored-services: '*'
 #  ignored-patterns: /**/api/**
@@ -74,4 +74,9 @@ hystrix:
           thread:
             timeoutInMilliseconds: 60000
             
-            
+# unlimited size == -1
+spring:
+  http:
+    multipart:
+      max-file-size: 51200KB
+      max-request-size: 51200KB
