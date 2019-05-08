@@ -75,3 +75,9 @@ hystrix:
             timeoutInMilliseconds: 60000
             
             
+# unlimited size == -1
+spring:
+  http:
+    multipart:
+      max-file-size: 51200KB
+      max-request-size: 51200KB
