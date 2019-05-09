@@ -78,5 +78,5 @@ hystrix:
 spring:
   http:
     multipart:
-      max-file-size: 51200KB
-      max-request-size: 51200KB
+      max-file-size: 100MB
+      max-request-size: 100MB
