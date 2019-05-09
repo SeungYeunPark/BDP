@@ -37,10 +37,11 @@ management:
       exposure:
         include: '*'
 spring:
-  http:
+  servlet:
     multipart:
       location: /user/platform/BDP/Zuul/Server
-      
+      max-file-size: 100MB
+      max-request-size: 100MB
 eureka:
   client:
     serviceUrl:
@@ -74,9 +75,3 @@ hystrix:
           thread:
             timeoutInMilliseconds: 60000
 
-# unlimited size == -1
-spring:
-  http:
-    multipart:
-      max-file-size: 100MB
-      max-request-size: 100MB
