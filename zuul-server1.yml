@@ -73,20 +73,10 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 60000
-<<<<<<< HEAD
 
-=======
-            
-            
->>>>>>> b932e3447b3258d774af50e608c1840860c87e84
 # unlimited size == -1
 spring:
   http:
     multipart:
-<<<<<<< HEAD
       max-file-size: 100MB
       max-request-size: 100MB
-=======
-      max-file-size: 51200KB
-      max-request-size: 51200KB
->>>>>>> b932e3447b3258d774af50e608c1840860c87e84
