@@ -1,77 +1,22 @@
-
-endpoints:
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
-  health:
-    sensitive: false
-
-#zuul.routes.'[�쑀�젅移대�� �넻�빐 �뼸�뼱吏� spring.application.name] = 寃쎈줈'
-#zuul:
-#  ignored-services: '*'
-#  ignored-patterns: /**/api/**
-
+google:
+  ribbon:
+    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+    listOfServers: http://165.141.131.6:18728/, http://165.141.131.7:18728/
 zuul:
-  host:
-    connect-timeout-millis: 5000
-    max-per-route-connections: 10000
-    max-total-connections: 5000
-    socket-timeout-millis: 60000
-  semaphore:
-    max-semaphores: 500
   routes:
-    SVC_IEye3_Crawler:
-      path: /SVC_IEye3_Crawler/**
-      url: http://165.141.131.9:8728/
-    cafe:
-      path: /cafe/**
-      url: http://165.141.131.3:3502/
-
-    
-management:
-  security:
-    enabled: false
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-spring:
-  servlet:
-    multipart:
-      location: /user/platform/BDP/Zuul/Server
-      max-file-size: 100MB
-      max-request-size: 100MB
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://165.141.131.3:3106/eureka/, http://165.141.131.10:3106/eureka/
-#      defaultZone: http://localhost:3106/eureka/, http://localhost:13106/eureka/
-
-############################################################
-################### Route Configuration ####################
-# Increase the Hystrix timeout to 6.5s (globally)
-# Ribbon global settings
-ribbon:
-  retryable: true
-# Max number of retries on the same server (excluding the first try)
-  MaxAutoRetries: 0
-# Max number of next servers to retry (excluding the first server)
-  MaxAutoRetriesNextServer: 1
-# Whether all operations can be retried for this client
-  OkToRetryOnAllOperations: true
-# Connect timeout used by Apache HttpClient
-  ConnectTimeout: 30000
-# Read timeout used by Apache HttpClient
-  ReadTimeout: 30000
-  
-  
-# Increase the Hystrix timeout to 60s (globally)
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000
-
+    daum:
+      display: t
+      path: /daum/**
+      type: m
+      url: http://daum.com
+    google:
+      display: t
+      path: /google/**
+      serviceId: google
+      type: m
+      url: ''
+    naver:
+      display: t
+      path: /naver/**
+      type: s
+      url: http://naver.com
